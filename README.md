@@ -1,4 +1,4 @@
-# PUC-PWA---Gerador de listas randômicas
+# PUC-PWA - Gerador de listas randômicas
 
 A aplicação aceita uma lista de nomes (aqueles que participarão do sorteio) e de categorias, gerando listas randômicas com o mínimo de repetições possíveis por categoria.
 
@@ -11,7 +11,7 @@ Pedro
 Ciclano
 Fulano
 
-### Cataegorias (ex: lista de lanches para piquenique)
+### Categorias (ex: lista de lanches para piquenique)
 Doces
 Bebidas
 Salgados
