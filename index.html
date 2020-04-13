@@ -4,7 +4,21 @@
     <title>Minha primeira PWA</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" type="image/png" href="/imagens/icones/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="PWA" />
+    <link rel="apple-touch-icon" sizes="72x72" href="imagens/icones/android-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="imagens/icones/android-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="imagens/icones/android-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="imagens/icones/android-icon-180x180.png">
     <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+        console.log(navigator);
+
         function f() {
             alert('Sensacional!');
         }
@@ -12,6 +26,9 @@
 </head>
 
 <body>
+    <p>
+        <img src="/imagens/icones/android-icon-192x192.png">
+    </p>
     <h1>Minha primeira PWA</h1>
     <p></p><button onclick="f()">Clique aqui</button></p>
 </body>

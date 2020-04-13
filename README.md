@@ -36,3 +36,7 @@ Salgados: Ciclano
 Doces: Fulano
 Bebidas: Ciclano
 Salgados: Pedro
+---
+#Scripts úteis:
+
+http-server -c-1 (evitar armazenamento de cache)
