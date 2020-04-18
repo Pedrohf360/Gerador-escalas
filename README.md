@@ -40,3 +40,9 @@ Salgados: Pedro
 #Scripts úteis:
 
 http-server -c-1 (evitar armazenamento de cache)
+
+## CONTRIBUIR
+
+Basta clonar o projeto e utilizar o npm run start para iniciar a aplicação. Há um arquivo package.json onde existem outros scripts úteis, por exemplo: 
+
+start-no-cache: start app with no cache, using -c-1 flag (-1 indica o tempo que)

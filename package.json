@@ -1,0 +1,6 @@
+{
+    "scripts": {
+        "start": "http-server",
+        "start-no-cache": "http-server -c-1"
+    }
+}
