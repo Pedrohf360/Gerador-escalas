@@ -99,3 +99,5 @@ match() - Esse método recupera o recurso no cache, para que possamos ter acesso
 4) Service Worker para funcionamento offline
 
     - Será utilizado o cache storage para acesso offline.
+
+*Ver modelos de layout no repositório de UMLs.
