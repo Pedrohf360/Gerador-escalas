@@ -67,4 +67,35 @@ match() - Esse método recupera o recurso no cache, para que possamos ter acesso
     });
   });
   return resposta;
-}```
+}
+```
+
+# Sobre o cumprimento dos requisitos
+
+1) Necessário pelo menos 2 páginas HTML:
+    -  index.html
+        - Breve apresentação da aplicação;
+        - Preferências de geração: inputs onde usuário vai informar dados sobre a lista que irá gerar (existe limite por categoria?, armazenar lista gerada?, basear-se nas últimas listas geradas para geração de novas lista?) -> Podem ser checkboxes;
+        - Últimas listas geradas
+
+    - form.html
+        - formulário com stepper para usuário preencher lista de usuários que participarão do sorteio e categorias e seus limites (quando for o caso);
+
+    - resultado.html
+        - lista gerada mostrando categoria e seus participantes;
+        - botão para compartilhar no whatsapp;
+        - botão para copiar para área de transferência;
+        - botão para salvar arquivo.
+        - botão para voltar para página principal.
+
+2) Usar armazenamento local de dados, por meio da API Web Storage ou da API IndexedDB.
+
+    - Utilizar localstorage para:
+        - guardar Preferências de geração;
+        - guardar últimas x listas geradas (que serão utilizadas para consulta do usuário e para utilização da aplicação na geração de novas listas).
+
+3) Manifesto WEB.
+
+4) Service Worker para funcionamento offline
+
+    - Será utilizado o cache storage para acesso offline.
