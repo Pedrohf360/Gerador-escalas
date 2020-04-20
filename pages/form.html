@@ -1,0 +1,76 @@
+<!doctype html>
+
+<head lang="pt-BR">
+    <title>Minha primeira PWA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" type="image/png" href="/assets/img/icones/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="PWA" />
+    <link href="/assets/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+    <!--load all styles -->
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/icones/android-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icones/android-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icones/android-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icones/android-icon-180x180.png">
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/general.css" />
+    <script src="/assets/js/form.js"></script>
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <img src="/assets/img/icones/android-icon-192x192.png">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="../index.html">Início</a>
+            </li>
+            <li>
+                <a href="/pages/about.html">Sobre</a>
+            </li>
+            <!-- <li>
+                <a href="/">Histórico</a>
+            </li> -->
+        </ul>
+    </header>
+
+    <h1>Gerador de Escalas</h1>
+
+
+    <h2>Membros</h2>
+    <section class="flex" id="members-categories">
+        <form class="center-form">
+            <div>
+                <textarea cols="30" rows="10" placeholder="Nomes das Pessoas (digite um nome em cada linha OU separados por vírgula)." id="inputMembros" formControlName="members"></textarea>
+            </div>
+        </form>
+    </section>
+
+    <h2>Categorias (Salgado, Doces, etc.)</h2>
+    <section class="flex" id="form-categorias">
+        <div id="escala_categorias">
+            <div>
+                <input type="text" placeholder="Nome da categoria" class="nomeCategoria" name="nomeCategoria" />
+
+                <input type="number" placeholder="Limite de Pessoas" class="limiteCategoria" name="limiteCategoria" />
+            </div>
+        </div>
+
+        <div id="add-categ-btn">
+            <button type="button" onclick="addCategoria()">Adicionar Categoria</button>
+        </div>
+    </section>
+
+    <div class="flex margin-top-25px">
+        <button type="button" class="next-btn" onclick="voltarPagina()">
+            <i class="fas fa-chevron-circle-left"></i>
+            Página anterior
+        </button>
+        <button type="submit" class="next-btn" onclick="alocarPessoasPorCategoria()">Gerar Escala(s)</button>
+    </div>
+</body>

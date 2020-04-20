@@ -1,0 +1,67 @@
+<!doctype html>
+
+<head lang="pt-BR">
+    <title>Minha primeira PWA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" type="image/png" href="/assets/img/icones/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="PWA" />
+    <link href="/assets/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/icones/android-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icones/android-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icones/android-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icones/android-icon-180x180.png">
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/general.css" />
+</head>
+
+<body>
+    <header>
+        <a href="/">
+            <img src="/assets/img/icones/android-icon-192x192.png">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="../index.html">Início</a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="flex" id="about">
+        <h1>
+            # PUC-PWA - Gerador de escalas randômicas
+        </h1>
+
+        <p>
+            A aplicação aceita uma escala de nomes (aqueles que participarão do sorteio) e de categorias, gerando escalas randômicas com o mínimo de repetições possíveis por categoria. Exemplo: serão geradas 3 escalas para um piquenique (poderia ser apenas 1 escala
+            para um evento único, porém imagine que o piquenique será realizado em nas próximas 3 semanas e queremos gerar a escala sem repetição para este caso):
+        </p>
+    </section>
+
+    <h3 class="text-align-center">Entradas</h3>
+
+    <section class="flex">
+        <ul>
+            <b>Nomes</b>
+            <li>- Pedro</li>
+            <li>- Ciclano</li>
+            <li>- Fulano</li>
+            <li>- Romaliano</li>
+        </ul>
+
+        <ul>
+            <b>Categorias</b>
+            <li>- Doces</li>
+            <li>- Bebidas</li>
+        </ul>
+    </section>
+
+    <h3 class="text-align-center">Saída</h3>
+    <section class="flex">
+        Escala 1: Doces: Ciclano Bebidas: Pedro Salgados: Fulano ### Escala 2: Doces: Pedro Bebidas: Fulano Salgados: Ciclano ### Escala 3: Doces: Fulano Bebidas: Ciclano Salgados: Pedro
+    </section>
+</body>

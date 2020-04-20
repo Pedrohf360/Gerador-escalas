@@ -9,26 +9,71 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <meta name="apple-mobile-web-app-title" content="PWA" />
+    <link href="/assets/fontawesome-free-5.13.0-web/css/all.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="72x72" href="assets/img/icones/android-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="144x144" href="assets/img/icones/android-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="assets/img/icones/android-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/img/icones/android-icon-180x180.png">
-    <link rel="stylesheet" href="/assets/styles.css" />
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+    <link rel="stylesheet" href="/assets/css/general.css" />
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/sw.js');
         }
-
-        function f() {
-            alert('Sensacional!');
-        }
     </script>
+
+    <script src="assets/js/index.js"></script>
 </head>
 
 <body>
-    <p>
-        <img src="/assets/img/icones/android-icon-192x192.png">
-    </p>
-    <h1>Minha primeira PWA</h1>
-    <p></p><button onclick="f()">Clique aqui</button></p>
+    <header>
+        <a href="/">
+            <img src="/assets/img/icones/android-icon-192x192.png">
+        </a>
+
+        <ul class="menu">
+            <li>
+                <a href="/pages/about.html">Sobre</a>
+            </li>
+            <!-- <li>
+                <a href="/">Histórico</a>
+            </li> -->
+        </ul>
+    </header>
+
+    <h1>Gerador de Escalas</h1>
+
+    <section class="flex" id="init-generator">
+        <ul>
+            <li>
+                <input type="checkbox" id="limiteCategoria" name="limiteCategoria">
+                <label for="limiteCategoria" id="label-limite-categ">Existe limite por categoria</label>
+            </li>
+
+            <li>
+                <input type="checkbox" id="usarUltimasEscalas" name="usarUltimasEscalas">
+                <label for="usarUltimasEscalas" id="label-usar-ult-categ">Basear-se nas últimas escalas geradas</label>
+            </li>
+
+            <div class="margin-top-25px">
+                <label for="quantidEscalas">Quantidade de Escalas:</label>
+                <input type="number" id="quantidEscalas" name="quantidEscalas" placeholder="Quantidade de Escalas">
+            </div>
+        </ul>
+
+    </section>
+
+    <div class="flex">
+        <button type="button" class="next-btn" onclick="abrirForm()">
+            Próximo
+            <i class="fas fa-chevron-circle-right"></i>
+        </button>
+    </div>
+    <!-- <h2>Últimas Escalas Geradas</h2> -->
+
+    <section class="flex" id="ultimas-escalas">
+        <!-- <ul>
+
+        </ul> -->
+    </section>
 </body>

@@ -23,21 +23,21 @@ self.addEventListener('fetch', function(event) {
     //     e.respondWith(fetch('/assets/styles2.css'))
     // }
 
-    let resposta = caches.open('pwa-v1.1')
-        .then(cache => {
-            return cache.match(event.request).then(recurso => {
-                if (recurso) {
-                    console.log(`Servindo ${event.request.url} do cache`);
-                    return recurso;
-                }
-                console.log(`Servindo ${event.request.url} da web`);
-                return fetch(event.request)
-                    .then(recurso => {
-                        cache.put(event.request, recurso.clone());
-                        return recurso;
-                    });
-            });
-        });
+    // let resposta = caches.open('pwa-v1.1')
+    //     .then(cache => {
+    //         return cache.match(event.request).then(recurso => {
+    //             if (recurso) {
+    //                 console.log(`Servindo ${event.request.url} do cache`);
+    //                 return recurso;
+    //             }
+    //             console.log(`Servindo ${event.request.url} da web`);
+    //             return fetch(event.request)
+    //                 .then(recurso => {
+    //                     cache.put(event.request, recurso.clone());
+    //                     return recurso;
+    //                 });
+    //         });
+    //     });
 
-    event.respondWith(resposta);
+    // event.respondWith(resposta);
 })

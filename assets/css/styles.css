@@ -1,0 +1,160 @@
+body,
+ul,
+li,
+p {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    padding-right: 2em;
+    flex-wrap: wrap;
+}
+
+header img {
+    width: 75px;
+    /* margin: 10px; */
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+#init-generator {
+    margin-bottom: 2em !important;
+}
+
+#init-generator ul {
+    margin: 10px auto;
+    flex-basis: 51%;
+}
+
+#init-generator ul li {
+    margin-top: 15px;
+    padding: 3px;
+    /* background-color: lightgray; */
+    border-radius: 6px;
+}
+
+#init-generator ul li #label-limite-categ {
+    padding-right: 8em;
+}
+
+#init-generator ul li #label-usar-ult-categ {
+    padding-right: 2em;
+}
+
+
+/* #init-generator ul li label {
+    padding-right: 68%;
+} */
+
+.next-btn {
+    width: 14em;
+    height: 4em;
+}
+
+#form-categorias #escala_categorias {
+    width: 100%;
+}
+
+#form-categorias #escala_categorias input {
+    margin: 5px;
+}
+
+#escala_categorias>div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+#form-categorias #add-categ-btn {
+    display: flex;
+    width: 100%;
+    height: 2em;
+    justify-content: center;
+    margin-top: 1.2em;
+}
+
+#escalas-geradas {
+    overflow-x: scroll;
+    height: 332px;
+}
+
+#escalas-geradas>div {
+    flex-basis: 25%;
+}
+
+#acoes-resultado {
+    justify-content: space-evenly;
+    height: 140px;
+    align-items: center;
+}
+
+#acoes-resultado #whatsapp {
+    text-align: center;
+}
+
+#acoes-resultado #whatsapp i {
+    color: green;
+    font-size: 30px;
+    width: 100%;
+}
+
+#acoes-resultado #copy {
+    text-align: center;
+}
+
+#acoes-resultado #copy i {
+    width: 100%;
+    font-size: 23px;
+    /* margin-bottom: ; */
+}
+
+button {
+    margin: 10px;
+}
+
+button i {
+    font-size: 15px;
+    vertical-align: middle;
+    margin-right: 3px;
+    margin-left: 3px;
+}
