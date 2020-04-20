@@ -75,7 +75,7 @@ match() - Esse método recupera o recurso no cache, para que possamos ter acesso
 1) Necessário pelo menos 2 páginas HTML:
     -  index.html
         - Breve apresentação da aplicação;
-        - Preferências de geração: inputs onde usuário vai informar dados sobre a escala que irá gerar (existe limite por categoria?, armazenar escala gerada?, basear-se nas últimas escalas geradas para geração de novas escala?) -> Podem ser checkboxes;
+        - Preferências de geração: inputs onde usuário vai informar dados sobre a escala que irá gerar (existe limite por categoria?, armazenar escala gerada?, basear-se nas últimas escalas geradas para geração de novas escala?, Repetir nomes até preencher limite por categoria?) -> Podem ser checkboxes;
         - Últimas escalas geradas
 
     - form.html
