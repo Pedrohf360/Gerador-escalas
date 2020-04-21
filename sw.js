@@ -1,9 +1,9 @@
 self.addEventListener('install', function(e) {
     console.log('SW: instalado!', e)
-    caches.open('pwa-v1.1')
-        .then(cache => {
-            cache.add('/index.html');
-        });
+    // caches.open('pwa-v1.1')
+    //     .then(cache => {
+    //         cache.add('/index.html');
+    //     });
 
     caches.has('pwa-v1.1').then(function(res) {
         if (res)
