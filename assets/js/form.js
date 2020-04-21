@@ -6,6 +6,7 @@ escalas = [];
 quantidEscalas = 1;
 mostrarLimiteCategoria = true;
 limiteDadosHistorico = 10;
+usarUltimasEscalas = false;
 
 window.addEventListener('load', () => {
     this.quantidEscalas = parseFloat(localStorage.getItem('quantidEscalas'));
@@ -18,6 +19,8 @@ window.addEventListener('load', () => {
     if (localStorage['membros']) {
         inputMembros.value = localStorage['membros'];
     }
+
+    this.usarUltimasEscalas = localStorage['usarUltimasEscalas'] === 'true';
 
     if (localStorage['categorias']) {
         var categoriasSalvas = [];
