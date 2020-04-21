@@ -7,6 +7,7 @@ historicoEscalas = [];
 window.addEventListener('load', () => {
     this.carregarDadosHistorico();
     this.carregarHistoricoEscalas();
+    localStorage['isMobileDevice'] = this.isMobileDevice();
 });
 
 function carregarDadosHistorico() {
@@ -70,13 +71,13 @@ function getEscalasHTML(escalas) {
 
     for (let i = 0; i < escalas.length; i++) {
 
-        escalaHTML = `<h3>Escala ${ i+1 }</h3>`;
+        escalaHTML = `<h3>Escala ${i + 1}</h3>`;
 
         this.getKeys(escalas[i]).forEach(categ => {
-            escalaHTML += `<div> <h4> ${ categ } </h4>`;
+            escalaHTML += `<div> <h4> ${categ} </h4>`;
 
             escalas[i][categ].members.forEach(member => {
-                escalaHTML += `<div> - ${ member }
+                escalaHTML += `<div> - ${member}
            </div>`;
             });
 
@@ -114,4 +115,20 @@ function verEscalaFromHistorico(histIndex) {
 
 function getKeys(obj) {
     return Object.keys(obj);
+}
+
+function isMobileDevice() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
 }

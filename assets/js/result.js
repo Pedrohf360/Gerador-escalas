@@ -1,5 +1,6 @@
 escalas = [];
 containerEscalasGeradas = '';
+isMobile = false;
 
 window.addEventListener('load', () => {
     this.escalas = JSON.parse(localStorage['escalas']);
@@ -12,6 +13,7 @@ window.addEventListener('load', () => {
         escalasVazio.innerHTML = 'Nenhum valor foi encontrado';
         containerEscalasGeradas.appendChild(escalasVazio);
     }
+    this.isMobile = localStorage['isMobileDevice'] === 'true';
 });
 
 function carregarEscalas() {
@@ -20,13 +22,13 @@ function carregarEscalas() {
 
     for (let i = 0; i < this.escalas.length; i++) {
 
-        escalaHTML = `<h3>Escala ${ i+1 }</h3>`;
+        escalaHTML = `<h3>Escala ${i + 1}</h3>`;
 
         this.getKeys(this.escalas[i]).forEach(categ => {
-            escalaHTML += `<div> <h4> ${ categ } </h4>`;
+            escalaHTML += `<div> <h4> ${categ} </h4>`;
 
             this.escalas[i][categ].members.forEach(member => {
-                escalaHTML += `<div> - ${ member }
+                escalaHTML += `<div> - ${member}
            </div>`;
             });
 
@@ -61,7 +63,11 @@ function copiarEscalas() {
 }
 
 function enviarWhatsapp() {
-    window.open('https://web.whatsapp.com/', '_blank');
+    if (this.isMobile) {
+        window.open('whatsapp://');
+    } else {
+        window.open('https://web.whatsapp.com/', '_blank');
+    }
 }
 
 function voltarPagina() {
