@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
 
 function carregarEscalas() {
 
-    var escala = {};
+    var escalaHTML;
 
     for (let i = 0; i < this.escalas.length; i++) {
 
@@ -30,7 +30,7 @@ function carregarEscalas() {
            </div>`;
             });
 
-            escala += `</div> <hr />`
+            escalaHTML += `</div>`
         });
 
         let escalaElemento = document.createElement('div');
@@ -43,6 +43,25 @@ function carregarEscalas() {
 
 function getKeys(obj) {
     return Object.keys(obj);
+}
+
+function copiarEscalas() {
+    var tempInput = document.createElement("input");
+    tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+
+    var boxEscalas = document.getElementById('escalas-geradas');
+
+    tempInput.value = boxEscalas.innerText;
+    document.body.appendChild(tempInput);
+    tempInput.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempInput);
+
+    alert('Texto copiado com sucesso!');
+}
+
+function enviarWhatsapp() {
+    window.open('https://web.whatsapp.com/', '_blank');
 }
 
 function voltarPagina() {

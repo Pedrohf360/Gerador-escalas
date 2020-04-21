@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head lang="pt-BR">
-    <title>Minha primeira PWA</title>
+    <title>Gerador de Escalas</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="/manifest.webmanifest">
@@ -42,7 +42,7 @@
     </section>
 
     <section class="flex" id="acoes-resultado">
-        <div id="whatsapp">
+        <div id="whatsapp" onclick="enviarWhatsapp()">
             <!-- <a href=""> -->
             <i class="fab fa-whatsapp" aria-hidden="true"></i>
             <span>
@@ -51,14 +51,14 @@
             <!-- </a> -->
         </div>
 
-        <div id="copy">
+        <div id="copy" onclick="copiarEscalas()">
             <i class="far fa-copy" aria-hidden="true"></i>
             <span>
                 Copiar
             </span>
         </div>
     </section>
-
+    <input type="text" id="valor-resultado">
     <section class="flex" id="botoes-retorno">
         <button type="button" class="next-btn" onclick="voltarPagina()">
             <i class="fas fa-chevron-circle-left"></i>

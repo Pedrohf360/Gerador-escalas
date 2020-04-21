@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head lang="pt-BR">
-    <title>Minha primeira PWA</title>
+    <title>Gerador de Escalas</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="/manifest.webmanifest">
@@ -26,12 +26,15 @@
 
         <ul class="menu">
             <li>
-                <a href="../index.html">Início</a>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="#">Sobre</a>
             </li>
         </ul>
     </header>
 
-    <section class="flex" id="about">
+    <section class="flex" id="about-main">
         <h1>
             # PUC-PWA - Gerador de escalas randômicas
         </h1>
@@ -44,7 +47,7 @@
 
     <h3 class="text-align-center">Entradas</h3>
 
-    <section class="flex">
+    <section class="flex" id="about-entradas">
         <ul>
             <b>Nomes</b>
             <li>- Pedro</li>
@@ -60,8 +63,14 @@
         </ul>
     </section>
 
-    <h3 class="text-align-center">Saída</h3>
-    <section class="flex">
-        Escala 1: Doces: Ciclano Bebidas: Pedro Salgados: Fulano ### Escala 2: Doces: Pedro Bebidas: Fulano Salgados: Ciclano ### Escala 3: Doces: Fulano Bebidas: Ciclano Salgados: Pedro
+    <h3 class="text-align-center">Saída (ex: gerando 3 escalas)</h3>
+    <section class="flex" id="about-saidas">
+        <p><b>Escala 1:</b> <b>Doces:</b> Pedro e Ciclano; <b>Bebidas:</b> Fulano e Romaliano</p>
+        <br>
+
+        <p><b>Escala 2:</b> <b>Doces:</b> Romaliano e Fulano; <b>Bebidas:</b> Pedro e Ciclano</p>
+        <br>
+
+        <p><b>Escala 3:</b> <b>Doces:</b> Pedro e Ciclano; <b>Bebidas:</b> Romaliano e Fulano</p>
     </section>
 </body>

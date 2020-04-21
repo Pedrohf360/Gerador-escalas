@@ -4,9 +4,12 @@ categorias = [];
 pessoaPorCategoria = {};
 escalas = [];
 quantidEscalas = 1;
+mostrarLimiteCategoria = true;
+limiteDadosHistorico = 10;
 
 window.addEventListener('load', () => {
     this.quantidEscalas = parseFloat(localStorage.getItem('quantidEscalas'));
+    this.mostrarLimiteCategoria = localStorage['mostrarLimite'] === 'true' ? true : false;
 
     if (!this.quantidEscalas || this.quantidEscalas <= 0) {
         this.quantidEscalas = 1;
@@ -21,11 +24,18 @@ window.addEventListener('load', () => {
 
         try {
             categoriasSalvas = JSON.parse(localStorage['categorias']);
-            escala_categorias.innerHTML = '';
-            categoriasSalvas.forEach(c => {
+            // escala_categorias.innerHTML = '';
+
+            if (!categoriasSalvas || (categoriasSalvas && categoriasSalvas.length === 0)) {
                 this.addCategoria(c.nome, c.limite);
-            });
+            } else {
+                categoriasSalvas.forEach(c => {
+                    this.addCategoria(c.nome, c.limite);
+                });
+            }
         } catch {}
+    } else {
+        this.addCategoria();
     }
 
     this.focusInput(null, 'inputMembros');
@@ -63,7 +73,7 @@ function setCategorias() {
     for (let i = 0, arrSize = nomesCategorias.length; i < arrSize; i++) {
         var obj = {
             nome: nomesCategorias[i].value,
-            limite: parseFloat(limitesCategorias[i].value)
+            limite: limitesCategorias[i] && limitesCategorias[i].value ? parseFloat(limitesCategorias[i].value) : ''
         };
         this.categorias.push(obj);
     }
@@ -153,6 +163,8 @@ function addEscalasToHistorico(novaListaEscalas) {
 
         if (historicoEscalas && historicoEscalas.length > 0) {
             historicoEscalas.push(dados);
+            historicoEscalas.sort((a, b) => new Date(b.criadoEm) - new Date(a.criadoEm));
+            historicoEscalas = historicoEscalas.slice(0, this.limiteDadosHistorico);
         } else {
             historicoEscalas = [dados];
         }
@@ -271,7 +283,10 @@ function addCategoria(nomeCateg = '', limiteCateg = '') {
     inputLimiteCateg.value = limiteCateg;
 
     auxDiv.appendChild(inputNomeCateg);
-    auxDiv.appendChild(inputLimiteCateg);
+
+    if (this.mostrarLimiteCategoria) {
+        auxDiv.appendChild(inputLimiteCateg);
+    }
 
     container.appendChild(auxDiv);
 

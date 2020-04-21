@@ -132,6 +132,13 @@ h2 {
     text-align: center;
 }
 
+#acoes-resultado #whatsapp:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+    border-radius: 51px;
+    padding: 6px 0;
+}
+
 #acoes-resultado #whatsapp i {
     color: green;
     font-size: 30px;
@@ -140,6 +147,13 @@ h2 {
 
 #acoes-resultado #copy {
     text-align: center;
+}
+
+#acoes-resultado #copy:hover {
+    cursor: pointer;
+    background-color: #eaeaea;
+    border-radius: 51px;
+    padding: 6px 0;
 }
 
 #acoes-resultado #copy i {
@@ -157,4 +171,76 @@ button i {
     vertical-align: middle;
     margin-right: 3px;
     margin-left: 3px;
+}
+
+#historico-escalas {
+    max-height: 500px;
+    overflow: scroll;
+}
+
+#historico-escalas>div {
+    border: 2px solid #ececff;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 5px;
+    max-height: 306px;
+    overflow: hidden;
+    flex-basis: 25%;
+}
+
+#valor-resultado {
+    display: none;
+}
+
+@media all and (max-width: 800px) {
+    #init-generator {
+        padding: 0 5em;
+    }
+    #escalas-geradas>div {
+        flex-basis: 30%;
+    }
+    ul {
+        flex-grow: 1;
+        justify-content: space-around;
+    }
+}
+
+@media all and (max-width: 600px) {
+    #init-generator {
+        padding: 0 2em;
+    }
+    #escalas-geradas {
+        margin: 0 8px;
+    }
+    #escalas-geradas>div {
+        flex-basis: 48%;
+    }
+    header {
+        padding-right: 0;
+    }
+    a {
+        margin: 10px auto;
+        padding: 15px;
+    }
+    ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    ul li {
+        margin: 15px 0;
+    }
+    #about-main {
+        margin: 0 1em;
+    }
+    #about-entradas {
+        margin: 0 76px;
+    }
+    #about-entradas ul {
+        width: auto;
+    }
+    #about-saidas {
+        margin: 0 57px;
+    }
 }
