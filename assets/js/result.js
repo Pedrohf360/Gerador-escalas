@@ -46,7 +46,7 @@ function getKeys(obj) {
 }
 
 function copiarEscalas() {
-    var tempInput = document.createElement("input");
+    var tempInput = document.createElement("textarea");
     tempInput.style = "position: absolute; left: -1000px; top: -1000px";
 
     var boxEscalas = document.getElementById('escalas-geradas');

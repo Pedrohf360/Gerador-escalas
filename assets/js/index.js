@@ -2,6 +2,7 @@ mostrarLimitePorCategoria = true;
 usarUltEscalas = true;
 quantEscalas = 1;
 ultimasEscalas = [];
+historicoEscalas = [];
 
 window.addEventListener('load', () => {
     this.carregarDadosHistorico();
@@ -19,9 +20,9 @@ function carregarDadosHistorico() {
 }
 
 function carregarHistoricoEscalas() {
-    var historicoEscalas = JSON.parse(localStorage.getItem('historicoEscalas'));
+    this.historicoEscalas = JSON.parse(localStorage.getItem('historicoEscalas'));
 
-    if (!historicoEscalas || (historicoEscalas && historicoEscalas.length === 0)) {
+    if (!this.historicoEscalas || (this.historicoEscalas && this.historicoEscalas.length === 0)) {
         return;
     }
 
@@ -29,14 +30,20 @@ function carregarHistoricoEscalas() {
     titulo.innerHTML = 'Últimas escalas geradas';
 
     const historicoElement = document.getElementById('historico-escalas');
-    historicoEscalas.forEach((hist, histIndex) => {
+    this.historicoEscalas.forEach((hist, histIndex) => {
         const divLista = document.createElement('div');
 
         const titulo = document.createElement('h4');
         titulo.innerHTML = `Lista ${histIndex + 1}`;
 
+        const verEscalaLink = document.createElement('button');
+        verEscalaLink.innerHTML = 'ver';
+        verEscalaLink.onclick = this.verEscalaFromHistorico.bind(null, histIndex);
+
+        titulo.appendChild(verEscalaLink);
+
         const quantidGeradas = document.createElement('p');
-        quantidGeradas.innerHTML = 'Quantidade de Escalas: ' + hist.quantidadeEscalas;
+        quantidGeradas.innerHTML = 'Qtd. Escalas: ' + hist.quantidadeEscalas;
 
         const criadoEm = document.createElement('span');
         criadoEm.innerHTML = 'Criado em: ' + new Date(hist.criadoEm).toLocaleDateString();
@@ -97,6 +104,12 @@ function abrirForm() {
     localStorage.setItem('membros', '');
     localStorage.setItem('categorias', '');
     window.location.href = "./pages/form.html";
+}
+
+function verEscalaFromHistorico(histIndex) {
+    localStorage.setItem('escalas', JSON.stringify(this.historicoEscalas[histIndex].escalasGeradas));
+
+    window.location.href = './pages/result.html';
 }
 
 function getKeys(obj) {

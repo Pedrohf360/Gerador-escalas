@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
                     this.addCategoria(c.nome, c.limite);
                 });
             }
-        } catch {}
+        } catch { }
     } else {
         this.addCategoria();
     }
@@ -57,26 +57,30 @@ function initPessoasPorCateg(categorias) {
 
 function getEscala(categorias, members = []) {
     const escala = {};
-    categorias.forEach(c => escala[c.nome] = { qtdLimite: c.limite >= 0 ? c.limite : this.getLimiteCateg(categorias.length, members.length), qtdAtual: 0, members: [] });
+    categorias.forEach(c => escala[c.nome] = { qtdLimite: !isNaN(parseFloat(c.limite)) && c.limite >= 1 ? c.limite : '', qtdAtual: 0, members: [] });
 
     return escala;
 }
 
-function getLimiteCateg(qtdCategs, qtdMembros) {
-    return Math.round(qtdMembros / qtdCategs);
-}
+// function getLimiteCateg(qtdCategs, qtdMembros) {
+//     return qtdMembros < qtdCategs? 1 : Math.round(qtdMembros / qtdCategs);
+// }
 
 function setCategorias() {
     var nomesCategorias = document.getElementsByClassName('nomeCategoria');
     var limitesCategorias = document.getElementsByClassName('limiteCategoria');
 
     for (let i = 0, arrSize = nomesCategorias.length; i < arrSize; i++) {
+        if (!nomesCategorias[i].value) {
+            continue;
+        }
         var obj = {
             nome: nomesCategorias[i].value,
             limite: limitesCategorias[i] && limitesCategorias[i].value ? parseFloat(limitesCategorias[i].value) : ''
         };
         this.categorias.push(obj);
     }
+    localStorage.setItem('categorias', JSON.stringify(this.categorias));
 }
 
 function alocarPessoasPorCategoria() {
@@ -88,11 +92,15 @@ function alocarPessoasPorCategoria() {
 
     this.setCategorias();
 
-    if (!this.categorias || (this.categorias && this.categorias.length === 0)) {
+    if (!this.members || (this.members && this.members.length <= 1)) {
+        alert('É necessário informar no mínimo 2 membros para o sorteio!');
         return null;
     }
 
-    localStorage.setItem('categorias', JSON.stringify(this.categorias));
+    if (!this.categorias || (this.categorias && this.categorias.length <= 1)) {
+        alert('É necessário informar no mínimo 2 categorias para o sorteio!');
+        return null;
+    }
 
     this.initPessoasPorCateg(this.categorias);
 
@@ -149,7 +157,6 @@ function addEscalasToHistorico(novaListaEscalas) {
     if (!novaListaEscalas) {
         return null;
     }
-    let listaEscalas = [];
 
     let dados = {
         criadoEm: new Date(),
